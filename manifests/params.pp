@@ -7,8 +7,8 @@ class airflow::params {
   $service_enable            = true
 
   # Airflow install settings
-  $version                   = '1.6.2'
-  $package_name              = 'airflow'
+  $version                   = '1.10.3'
+  $package_name              = 'apache-airflow'
 
   # User and group settings
   $user                      = 'airflow'
@@ -17,7 +17,7 @@ class airflow::params {
   $shell                     = '/bin/bash'
   $gid                       = undef
   $uid                       = undef
-  $folders_mode              = 0775
+  $folders_mode              = '0775'
 
   # General settings
   $log_folder                = '/var/log/airflow'
