@@ -5,7 +5,7 @@ After=basic.target network.target
 
 [Service]
 PIDFile = <%= @run_folder %>/airflow_worker.pid
-ExecStart=/usr/bin/airflow worker
+ExecStart=/usr/local/bin/airflow worker
 ExecReload=/bin/kill -HUP $MAINPID
 Environment="AIRFLOW_HOME=<%= @home_folder %>"
 KillMode=process

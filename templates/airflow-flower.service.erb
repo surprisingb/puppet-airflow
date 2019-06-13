@@ -8,7 +8,7 @@ Environment="AIRFLOW_HOME=<%= @home_folder %>"
 User=<%= @user %>
 Group=<%= @group %>
 Type=simple
-ExecStart=/bin/airflow flower
+ExecStart=/usr/local/bin/airflow flower
 KillMode=process
 Restart=on-failure
 RestartSec=15s
