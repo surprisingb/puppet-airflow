@@ -85,7 +85,7 @@
 ###### Celery settings ######
 # [*celery_app_name*]
 #   The app name that will be used by celery.
-# [*celeryd_concurrency*]
+# [*worker_concurrency*]
 #   The concurrency that will be used when starting workers with the
 #   "airflow worker" command.
 # [*worker_log_server_port*]
@@ -94,7 +94,7 @@
 #   web server.
 # [*broker_url*]
 #   The celery broker URL.
-# [*celery_result_backend*]
+# [*result_backend*]
 #   The celery result backend setting.
 # [*flower_port*]
 #   Celery flower is a sweet UI for celery.
@@ -182,10 +182,10 @@ class airflow (
 
   ## Celery settings
   $celery_app_name         = $airflow::params::celery_app_name,
-  $celeryd_concurrency     = $airflow::params::celeryd_concurrency,
+  $worker_concurrency      = $airflow::params::worker_concurrency,
   $worker_log_server_port  = $airflow::params::worker_log_server_port,
   $broker_url              = $airflow::params::broker_url,
-  $celery_result_backend   = $airflow::params::celery_result_backend,
+  $result_backend          = $airflow::params::result_backend,
   $flower_port             = $airflow::params::flower_port,
   $default_queue           = $airflow::params::default_queue,
 
@@ -231,7 +231,7 @@ class airflow (
   validate_integer($job_heartbeat_sec)
   validate_integer($scheduler_heartbeat_sec)
   validate_integer($web_server_port)
-  validate_integer($celeryd_concurrency)
+  validate_integer($worker_concurrency)
   validate_integer($worker_log_server_port)
   validate_integer($flower_port)
   validate_integer($smtp_port)

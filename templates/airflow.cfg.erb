@@ -1,7 +1,8 @@
 # THIS FILE IS AUTOMATICALLY DISTRIBUTED BY PUPPET.  ANY CHANGES WILL BE OVERWRITTEN.
 [core]
 # The home folder for airflow, default is ~/airflow
-airflow_home = <%= @home_folder %>
+# DEPRECATED: use ENV variable $AIRFLOW_HOME instead
+# airflow_home = <%= @home_folder %>
 
 # The folder where your airflow pipelines live, most likely a
 # subfolder in a code repository
@@ -119,7 +120,7 @@ celery_app_name = <%= @celery_app_name %>
 # "airflow worker" command. This defines the number of task instances that
 # a worker will take, so size up your workers based on the resources on
 # your worker box and the nature of your tasks
-celeryd_concurrency = <%= @celeryd_concurrency %>
+worker_concurrency = <%= @worker_concurrency %>
 
 # When you start an airflow worker, airflow starts a tiny web server
 # subprocess to serve the workers local log files to the airflow main
@@ -134,7 +135,7 @@ worker_log_server_port = <%= @worker_log_server_port %>
 broker_url = <%= @broker_url %>
 
 # Another key Celery setting
-celery_result_backend = <%= @celery_result_backend %>
+result_backend = <%= @result_backend %>
 
 # Celery Flower is a sweet UI for Celery. Airflow has a shortcut to start
 # it `airflow flower`. This defines the port that Celery Flower runs on
