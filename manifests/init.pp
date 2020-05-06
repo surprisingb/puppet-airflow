@@ -109,6 +109,8 @@
 #   The scheduler constantly tries to trigger new tasks (look at the
 #   scheduler section in the docs for more information). This defines
 #   how often the scheduler should run (in seconds).
+# [*dag_dir_list_interval*]
+#   How often (in seconds) to scan the DAGs directory for new files.
 ###### Puppet hashes ######
 # [*statsd_settings*]
 #   Statsd settings dictionary.
@@ -192,6 +194,7 @@ class airflow (
   ## Scheduler settings
   $job_heartbeat_sec       = $airflow::params::job_heartbeat_sec,
   $scheduler_heartbeat_sec = $airflow::params::scheduler_heartbeat_sec,
+  $dag_dir_list_interval   = $airflow::params::dag_dir_list_interval,
 
   ### START hiera lookups ###
   $statsd_settings         = $airflow::params::statsd_settings,

@@ -72,6 +72,7 @@ class airflow::params {
   ## Scheduler settings
   $job_heartbeat_sec         = 5
   $scheduler_heartbeat_sec   = 5
+  $dag_dir_list_interval     = 300
 
   ### START hiera lookups ###
   $ldap_settings             = {}

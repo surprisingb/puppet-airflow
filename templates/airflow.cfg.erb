@@ -159,6 +159,8 @@ job_heartbeat_sec = <%= @job_heartbeat_sec %>
 # how often the scheduler should run (in seconds).
 scheduler_heartbeat_sec = <%= @scheduler_heartbeat_sec %>
 
+# How often (in seconds) to scan the DAGs directory for new files. Default to 5 minutes.
+dag_dir_list_interval = <%= @dag_dir_list_interval %>
 
 <% if @statsd_settings['statsd_on'] -%>
 # Statsd (https://github.com/etsy/statsd) integration settings
